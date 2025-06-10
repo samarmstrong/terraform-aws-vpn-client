@@ -6,6 +6,7 @@ resource "aws_ec2_client_vpn_endpoint" "vpn-client" {
   security_group_ids     = [aws_security_group.vpn.id]
   client_cidr_block      = var.client_cidr_block
   session_timeout_hours  = var.session_timeout_hours
+  dns_servers            = var.dns_servers
 
   split_tunnel = var.split_tunnel
   authentication_options {
